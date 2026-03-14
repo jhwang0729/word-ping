@@ -1,2 +1,14 @@
 .DS_Store
 .idea/
+
+# Flutter/Dart
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+.packages
+build/
+*.iml
+
+# IDE
+.vscode/
+*.swp

@@ -1,0 +1,46 @@
+name: word_ping
+description: "Word Ping - 영단어 사전 & 퀴즈 알람 앱"
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.11.1
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # State management
+  flutter_riverpod: ^2.6.1
+
+  # Routing
+  go_router: ^15.1.2
+
+  # Local DB
+  sqflite: ^2.4.2
+  sqflite_common_ffi_web: ^0.4.5+3
+  path: ^1.9.1
+
+  # Settings persistence
+  shared_preferences: ^2.5.3
+
+  # HTTP
+  http: ^1.3.0
+
+  # TTS
+  flutter_tts: ^4.2.0
+
+  # Icons
+  font_awesome_flutter: ^10.8.0
+
+  # Alarm & Notifications
+  android_alarm_manager_plus: ^4.0.8
+  flutter_local_notifications: ^19.0.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^6.0.0
+
+flutter:
+  uses-material-design: true
