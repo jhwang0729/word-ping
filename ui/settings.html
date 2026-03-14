@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Word Ping - Settings</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header -->
+        <header class="header">
+            <a href="home.html" class="icon-btn"><i class="fas fa-arrow-left"></i></a>
+            <div class="title">설정</div>
+            <div style="width: 24px;"></div> <!-- Spacer -->
+        </header>
+
+        <!-- Content Area -->
+        <div class="content">
+            <div class="setting-group">
+                <div class="setting-item">
+                    <span class="setting-label">다크 모드</span>
+                    <label class="switch">
+                        <input type="checkbox">
+                        <span class="slider"></span>
+                    </label>
+                </div>
+                <div class="setting-item">
+                    <span class="setting-label">글자 크기</span>
+                    <select class="setting-select">
+                        <option>작게</option>
+                        <option selected>보통</option>
+                        <option>크게</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="setting-group">
+                <div class="setting-item">
+                    <span class="setting-label">플래시카드 앞면 표시</span>
+                    <select class="setting-select">
+                        <option selected>단어</option>
+                        <option>뜻</option>
+                    </select>
+                </div>
+                <div class="setting-item">
+                    <span class="setting-label">기본 퀴즈 개수</span>
+                    <select class="setting-select">
+                        <option>5개</option>
+                        <option>10개</option>
+                        <option>15개</option>
+                        <option selected>20개</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="setting-group">
+                <div class="setting-item" style="cursor: pointer;">
+                    <span class="setting-label">앱 정보</span>
+                    <i class="fas fa-chevron-right" style="color: #ccc;"></i>
+                </div>
+                <div class="setting-item" style="cursor: pointer;">
+                    <span class="setting-label">데이터 백업/복원</span>
+                    <i class="fas fa-chevron-right" style="color: #ccc;"></i>
+                </div>
+            </div>
+        </div>
+
+        <!-- Navigation Bar -->
+        <nav class="nav-bar">
+            <a href="wordbook.html" class="nav-item">
+                <i class="fas fa-book"></i>
+                <span>단어장</span>
+            </a>
+            <a href="home.html" class="nav-center-btn">
+                <i class="fas fa-search"></i>
+            </a>
+            <a href="alarm-list.html" class="nav-item">
+                <i class="fas fa-bell"></i>
+                <span>알람</span>
+            </a>
+        </nav>
+    </div>
+</body>
+</html>

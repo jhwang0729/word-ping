@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Word Ping - Word Detail</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header with Back Button -->
+        <header class="header">
+            <a href="home.html" class="icon-btn"><i class="fas fa-arrow-left"></i></a>
+            <div class="title">검색 결과</div>
+            <div style="width: 24px;"></div> <!-- Spacer -->
+        </header>
+
+        <!-- Content Area -->
+        <div class="content">
+            <div class="word-header">
+                <div class="word-title-group">
+                    <h1 class="word-title">apple</h1>
+                    <span class="word-phonetic">/ˈæp.əl/</span>
+                </div>
+                <button class="star-btn active" id="starBtn">
+                    <i class="fas fa-star"></i>
+                </button>
+            </div>
+            
+            <div class="us-pronunciation">미국식: [ˈæpl]</div>
+
+            <ul class="meaning-list">
+                <li class="meaning-item">
+                    <div class="meaning-text">1. 사과 (명사)</div>
+                    <div class="example-text">"I ate a red apple for breakfast."</div>
+                </li>
+                <li class="meaning-item">
+                    <div class="meaning-text">2. (사과나무의) 열매 (명사)</div>
+                    <div class="example-text">"The apple tree in our backyard is full of fruit."</div>
+                </li>
+                <li class="meaning-item">
+                    <div class="meaning-text">3. 애플 (회사명) (고유명사)</div>
+                    <div class="example-text">"She bought a new phone from Apple."</div>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Navigation Bar -->
+        <nav class="nav-bar">
+            <a href="wordbook.html" class="nav-item">
+                <i class="fas fa-book"></i>
+                <span>단어장</span>
+            </a>
+            <a href="home.html" class="nav-center-btn">
+                <i class="fas fa-search"></i>
+            </a>
+            <a href="alarm-list.html" class="nav-item">
+                <i class="fas fa-bell"></i>
+                <span>알람</span>
+            </a>
+        </nav>
+    </div>
+
+    <script>
+        // Toggle star button
+        document.getElementById('starBtn').addEventListener('click', function() {
+            this.classList.toggle('active');
+            if (this.classList.contains('active')) {
+                this.querySelector('i').className = 'fas fa-star';
+                this.style.color = '#ffd700';
+            } else {
+                this.querySelector('i').className = 'far fa-star';
+                this.style.color = '#ccc';
+            }
+        });
+    </script>
+</body>
+</html>

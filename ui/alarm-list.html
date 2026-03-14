@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Word Ping - Alarm List</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header -->
+        <header class="header">
+            <div class="title">알람</div>
+            <div style="width: 24px;"></div> <!-- Spacer -->
+        </header>
+
+        <!-- Content Area -->
+        <div class="content">
+            <div class="add-btn-container">
+                <a href="alarm-setting.html" class="add-btn" style="text-decoration: none;"><i class="fas fa-plus"></i></a>
+            </div>
+
+            <div class="list-container">
+                <!-- Alarm Item 1 (Active, Tomorrow) -->
+                <div class="alarm-item highlight" onclick="location.href='alarm-setting.html'">
+                    <div class="alarm-info">
+                        <div class="alarm-time"><span>오전</span> 07:00</div>
+                        <div class="alarm-details">
+                            <span class="alarm-name">기상 알람</span>
+                            <span>월 화 수 목 금</span>
+                        </div>
+                        <div class="alarm-details" style="color: #007bff; font-size: 12px; margin-top: 5px;">
+                            <i class="fas fa-book"></i> 토익 필수 영단어 (단어 3개)
+                        </div>
+                    </div>
+                    <div class="alarm-toggle" onclick="event.stopPropagation()">
+                        <label class="switch">
+                            <input type="checkbox" checked>
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Alarm Item 2 (Inactive) -->
+                <div class="alarm-item" onclick="location.href='alarm-setting.html'">
+                    <div class="alarm-info">
+                        <div class="alarm-time" style="color: #999;"><span>오후</span> 10:30</div>
+                        <div class="alarm-details">
+                            <span class="alarm-name">단어 복습</span>
+                            <span>매일</span>
+                        </div>
+                        <div class="alarm-details" style="color: #999; font-size: 12px; margin-top: 5px;">
+                            <i class="fas fa-book"></i> 수능 영단어 (단어 5개)
+                        </div>
+                    </div>
+                    <div class="alarm-toggle" onclick="event.stopPropagation()">
+                        <label class="switch">
+                            <input type="checkbox">
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Navigation Bar -->
+        <nav class="nav-bar">
+            <a href="wordbook.html" class="nav-item">
+                <i class="fas fa-book"></i>
+                <span>단어장</span>
+            </a>
+            <a href="home.html" class="nav-center-btn">
+                <i class="fas fa-search"></i>
+            </a>
+            <a href="alarm-list.html" class="nav-item active">
+                <i class="fas fa-bell"></i>
+                <span>알람</span>
+            </a>
+        </nav>
+    </div>
+</body>
+</html>

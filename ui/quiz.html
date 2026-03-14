@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Word Ping - Quiz</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header -->
+        <header class="header">
+            <a href="wordbook.html" class="icon-btn"><i class="fas fa-times"></i></a>
+            <div class="title">단어 퀴즈</div>
+            <div style="width: 24px;"></div> <!-- Spacer -->
+        </header>
+
+        <!-- Content Area -->
+        <div class="content" style="display: flex; flex-direction: column; justify-content: center;">
+            <div class="fc-progress" style="margin-top: 0; margin-bottom: 30px;">문제 1 / 20</div>
+            
+            <div class="quiz-header">
+                <div class="quiz-word">apple</div>
+            </div>
+
+            <div class="quiz-options">
+                <div class="quiz-option" onclick="checkAnswer(this, false)">1. 바나나</div>
+                <div class="quiz-option" onclick="checkAnswer(this, true)">2. 사과</div>
+                <div class="quiz-option" onclick="checkAnswer(this, false)">3. 포도</div>
+                <div class="quiz-option" onclick="checkAnswer(this, false)">4. 오렌지</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function checkAnswer(element, isCorrect) {
+            // Disable all options
+            const options = document.querySelectorAll('.quiz-option');
+            options.forEach(opt => opt.style.pointerEvents = 'none');
+
+            if (isCorrect) {
+                element.classList.add('correct');
+            } else {
+                element.classList.add('incorrect');
+                // Show correct answer
+                options[1].classList.add('correct'); // Assuming 2nd option is correct for demo
+            }
+
+            // Move to next question or result after delay
+            setTimeout(() => {
+                window.location.href = 'quiz-result.html';
+            }, 1500);
+        }
+    </script>
+</body>
+</html>

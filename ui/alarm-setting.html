@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Word Ping - Alarm Setting</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header -->
+        <header class="header">
+            <a href="alarm-list.html" class="icon-btn"><i class="fas fa-times"></i></a>
+            <div class="title">알람 설정</div>
+            <a href="alarm-list.html" class="icon-btn" style="color: #007bff; font-size: 18px; font-weight: bold;">저장</a>
+        </header>
+
+        <!-- Content Area -->
+        <div class="content">
+            <div class="setting-group">
+                <div class="time-picker">
+                    <select class="setting-select" style="font-size: 24px; font-weight: bold; border: none; appearance: none;">
+                        <option>오전</option>
+                        <option>오후</option>
+                    </select>
+                    <input type="text" class="time-input" value="07" maxlength="2">
+                    <span style="font-size: 48px; font-weight: bold; color: #333;">:</span>
+                    <input type="text" class="time-input" value="00" maxlength="2">
+                </div>
+                
+                <div class="day-selector">
+                    <button class="day-btn">일</button>
+                    <button class="day-btn active">월</button>
+                    <button class="day-btn active">화</button>
+                    <button class="day-btn active">수</button>
+                    <button class="day-btn active">목</button>
+                    <button class="day-btn active">금</button>
+                    <button class="day-btn">토</button>
+                </div>
+            </div>
+
+            <div class="setting-group">
+                <div class="setting-item">
+                    <span class="setting-label">알람 이름</span>
+                    <input type="text" class="setting-input" value="기상 알람" maxlength="12" placeholder="최대 12자">
+                </div>
+                <div class="setting-item">
+                    <span class="setting-label">사운드</span>
+                    <select class="setting-select">
+                        <option>기본 알람음</option>
+                        <option>새소리</option>
+                        <option>파도소리</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="setting-group">
+                <div class="setting-item">
+                    <span class="setting-label">단어 퀴즈 활성화</span>
+                    <label class="switch">
+                        <input type="checkbox" checked>
+                        <span class="slider"></span>
+                    </label>
+                </div>
+                <div class="setting-item">
+                    <span class="setting-label">단어장 선택</span>
+                    <select class="setting-select">
+                        <option>토익 필수 영단어</option>
+                        <option>수능 영단어</option>
+                    </select>
+                </div>
+                <div class="setting-item">
+                    <span class="setting-label">맞춰야 할 단어 수</span>
+                    <select class="setting-select">
+                        <option>1개</option>
+                        <option>3개</option>
+                        <option selected>5개</option>
+                        <option>10개</option>
+                    </select>
+                </div>
+            </div>
+
+            <button class="btn btn-danger" style="margin-top: 20px;">알람 삭제</button>
+        </div>
+    </div>
+
+    <script>
+        // Simple toggle for day buttons
+        document.querySelectorAll('.day-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                this.classList.toggle('active');
+            });
+        });
+    </script>
+</body>
+</html>

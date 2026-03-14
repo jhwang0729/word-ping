@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Word Ping - Flashcard</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header -->
+        <header class="header">
+            <a href="wordbook.html" class="icon-btn"><i class="fas fa-arrow-left"></i></a>
+            <div class="title">플래시카드</div>
+            <div style="width: 24px;"></div> <!-- Spacer -->
+        </header>
+
+        <!-- Content Area -->
+        <div class="content">
+            <div class="fc-progress">1 / 120</div>
+            
+            <div class="flashcard-container">
+                <div class="flashcard" id="flashcard">
+                    <div class="flashcard-face flashcard-front">
+                        <div class="fc-word">apple</div>
+                        <div class="fc-phonetic">/ˈæp.əl/</div>
+                    </div>
+                    <div class="flashcard-face flashcard-back">
+                        <div class="fc-meaning">1. 사과</div>
+                        <div class="fc-example">"I ate a red apple for breakfast."</div>
+                        <div style="margin: 10px 0; border-top: 1px solid rgba(255,255,255,0.3); width: 80%;"></div>
+                        <div class="fc-meaning">2. (사과나무의) 열매</div>
+                        <div class="fc-example">"The apple tree is full of fruit."</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flashcard-controls">
+                <button class="fc-btn"><i class="fas fa-chevron-left"></i></button>
+                <button class="fc-btn"><i class="fas fa-chevron-right"></i></button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('flashcard').addEventListener('click', function() {
+            this.classList.toggle('is-flipped');
+        });
+    </script>
+</body>
+</html>

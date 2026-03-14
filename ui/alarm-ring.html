@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Word Ping - Alarm Ring</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="app-container alarm-ring-container">
+        <!-- Content Area -->
+        <div class="content" style="display: flex; flex-direction: column; justify-content: center;">
+            
+            <div class="alarm-ring-header">
+                <div class="alarm-ring-time">07:00</div>
+                <div class="alarm-ring-title">기상 알람</div>
+                <div style="margin-top: 10px; font-size: 14px; opacity: 0.8;">
+                    <i class="fas fa-bell fa-shake"></i> 알람을 해제하려면 퀴즈를 맞추세요
+                </div>
+            </div>
+
+            <div class="alarm-quiz-card">
+                <div class="alarm-quiz-progress" id="progressText">남은 단어: 5개</div>
+                
+                <div class="alarm-quiz-word">apple</div>
+
+                <div class="alarm-quiz-options">
+                    <div class="alarm-quiz-option" onclick="checkAlarmAnswer(this, false)">1. 바나나</div>
+                    <div class="alarm-quiz-option" onclick="checkAlarmAnswer(this, true)">2. 사과</div>
+                    <div class="alarm-quiz-option" onclick="checkAlarmAnswer(this, false)">3. 포도</div>
+                    <div class="alarm-quiz-option" onclick="checkAlarmAnswer(this, false)">4. 오렌지</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let wordsLeft = 5;
+
+        function checkAlarmAnswer(element, isCorrect) {
+            const options = document.querySelectorAll('.alarm-quiz-option');
+            options.forEach(opt => opt.style.pointerEvents = 'none');
+
+            if (isCorrect) {
+                element.style.backgroundColor = '#d4edda';
+                element.style.borderColor = '#28a745';
+                element.style.color = '#155724';
+                wordsLeft--;
+            } else {
+                element.style.backgroundColor = '#f8d7da';
+                element.style.borderColor = '#dc3545';
+                element.style.color = '#721c24';
+                wordsLeft++; // Penalty for wrong answer
+            }
+
+            document.getElementById('progressText').innerText = `남은 단어: ${wordsLeft}개`;
+
+            setTimeout(() => {
+                if (wordsLeft <= 0) {
+                    alert('알람이 해제되었습니다!');
+                    window.location.href = 'alarm-list.html';
+                } else {
+                    // Reset for next question (mocking)
+                    options.forEach(opt => {
+                        opt.style.pointerEvents = 'auto';
+                        opt.style.backgroundColor = '#f8f9fa';
+                        opt.style.borderColor = '#e9ecef';
+                        opt.style.color = '#333';
+                    });
+                }
+            }, 1000);
+        }
+    </script>
+</body>
+</html>

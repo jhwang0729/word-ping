@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Word Ping - Home</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header -->
+        <header class="header">
+            <div class="title">Word Ping</div>
+            <a href="settings.html" class="icon-btn"><i class="fas fa-cog"></i></a>
+        </header>
+
+        <!-- Search Area -->
+        <div class="search-container">
+            <div class="search-box">
+                <i class="fas fa-search"></i>
+                <input type="text" placeholder="단어를 검색하세요..." id="searchInput">
+            </div>
+        </div>
+
+        <!-- Navigation Bar -->
+        <nav class="nav-bar">
+            <a href="wordbook.html" class="nav-item">
+                <i class="fas fa-book"></i>
+                <span>단어장</span>
+            </a>
+            <a href="home.html" class="nav-center-btn">
+                <i class="fas fa-search"></i>
+            </a>
+            <a href="alarm-list.html" class="nav-item">
+                <i class="fas fa-bell"></i>
+                <span>알람</span>
+            </a>
+        </nav>
+    </div>
+
+    <script>
+        // Simple script to navigate to word.html on enter
+        document.getElementById('searchInput').addEventListener('keypress', function (e) {
+            if (e.key === 'Enter' && this.value.trim() !== '') {
+                window.location.href = 'word.html';
+            }
+        });
+    </script>
+</body>
+</html>

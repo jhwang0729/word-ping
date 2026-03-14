@@ -1,0 +1,793 @@
+/* style.css */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, 'Helvetica Neue', 'Segoe UI', 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', sans-serif;
+    background-color: #f5f5f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Mobile App Container */
+.app-container {
+    width: 100%;
+    max-width: 400px;
+    height: 100vh;
+    max-height: 850px;
+    background-color: #ffffff;
+    position: relative;
+    overflow-y: auto;
+    overflow-x: hidden;
+    box-shadow: 0 0 20px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    height: 60px;
+}
+
+.header .title {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.header .icon-btn {
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: #333;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+/* Search Area */
+.search-container {
+    padding: 0 20px;
+    margin-top: 10vh;
+}
+
+.search-box {
+    display: flex;
+    align-items: center;
+    background-color: #f0f0f0;
+    border-radius: 25px;
+    padding: 10px 20px;
+}
+
+.search-box i {
+    color: #888;
+    margin-right: 10px;
+}
+
+.search-box input {
+    border: none;
+    background: transparent;
+    outline: none;
+    font-size: 16px;
+    width: 100%;
+}
+
+/* Content Area */
+.content {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+    padding-bottom: 80px; /* Space for nav bar */
+}
+
+/* Navigation Bar */
+.nav-bar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 70px;
+    background-color: #ffffff;
+    border-top: 1px solid #eee;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    z-index: 100;
+}
+
+.nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #888;
+    text-decoration: none;
+    font-size: 12px;
+    gap: 5px;
+}
+
+.nav-item i {
+    font-size: 24px;
+}
+
+.nav-item.active {
+    color: #007bff;
+}
+
+/* Center Search Button in Nav */
+.nav-center-btn {
+    width: 60px;
+    height: 60px;
+    background-color: #007bff;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 28px;
+    transform: translateY(-20px);
+    box-shadow: 0 4px 10px rgba(0, 123, 255, 0.3);
+    text-decoration: none;
+}
+
+/* Word Detail Styles */
+.word-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 15px;
+}
+
+.word-title-group {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+}
+
+.word-title {
+    font-size: 32px;
+    font-weight: bold;
+    color: #333;
+}
+
+.word-phonetic {
+    font-size: 18px;
+    color: #666;
+}
+
+.star-btn {
+    background: none;
+    border: none;
+    font-size: 28px;
+    color: #ccc;
+    cursor: pointer;
+}
+
+.star-btn.active {
+    color: #ffd700;
+}
+
+.us-pronunciation {
+    font-size: 16px;
+    color: #007bff;
+    margin-bottom: 20px;
+    font-weight: 500;
+}
+
+.meaning-list {
+    list-style: none;
+}
+
+.meaning-item {
+    margin-bottom: 20px;
+    background-color: #f9f9f9;
+    padding: 15px;
+    border-radius: 10px;
+}
+
+.meaning-text {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #222;
+}
+
+.example-text {
+    font-size: 15px;
+    color: #555;
+    font-style: italic;
+    line-height: 1.4;
+}
+
+/* Buttons */
+.btn {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    color: white;
+}
+
+.btn-secondary {
+    background-color: #e0e0e0;
+    color: #333;
+}
+
+.btn-danger {
+    background-color: #dc3545;
+    color: white;
+}
+
+/* Wordbook List Styles */
+.list-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.list-item {
+    background-color: #fff;
+    border: 1px solid #eee;
+    border-radius: 12px;
+    padding: 15px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.02);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.list-item-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.list-item-title {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+}
+
+.list-item-count {
+    font-size: 14px;
+    color: #888;
+    background-color: #f0f0f0;
+    padding: 4px 8px;
+    border-radius: 12px;
+}
+
+.list-item-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.action-btn {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+.action-btn.flashcard {
+    background-color: #e3f2fd;
+    color: #007bff;
+}
+
+.action-btn.quiz {
+    background-color: #e8f5e9;
+    color: #28a745;
+}
+
+.action-btn:disabled {
+    background-color: #f5f5f5;
+    color: #ccc;
+    cursor: not-allowed;
+}
+
+.add-btn-container {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.add-btn {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0,123,255,0.3);
+}
+
+/* Flashcard Styles */
+.flashcard-container {
+    perspective: 1000px;
+    width: 100%;
+    height: 60vh;
+    margin-top: 20px;
+}
+
+.flashcard {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+    cursor: pointer;
+}
+
+.flashcard.is-flipped {
+    transform: rotateY(180deg);
+}
+
+.flashcard-face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    padding: 30px;
+    text-align: center;
+}
+
+.flashcard-front {
+    background-color: #fff;
+    border: 2px solid #007bff;
+}
+
+.flashcard-back {
+    background-color: #007bff;
+    color: white;
+    transform: rotateY(180deg);
+}
+
+.fc-word {
+    font-size: 40px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.fc-phonetic {
+    font-size: 20px;
+    color: #888;
+}
+
+.fc-meaning {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.fc-example {
+    font-size: 16px;
+    font-style: italic;
+    opacity: 0.9;
+}
+
+.flashcard-controls {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+    padding: 0 20px;
+}
+
+.fc-btn {
+    background: none;
+    border: none;
+    font-size: 30px;
+    color: #007bff;
+    cursor: pointer;
+}
+
+.fc-progress {
+    text-align: center;
+    font-size: 16px;
+    color: #666;
+    margin-top: 15px;
+}
+
+/* Quiz Styles */
+.quiz-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.quiz-word {
+    font-size: 48px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.quiz-options {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.quiz-option {
+    background-color: #fff;
+    border: 2px solid #e0e0e0;
+    border-radius: 12px;
+    padding: 20px;
+    font-size: 18px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.quiz-option:active {
+    transform: scale(0.98);
+}
+
+.quiz-option.correct {
+    background-color: #d4edda;
+    border-color: #28a745;
+    color: #155724;
+}
+
+.quiz-option.incorrect {
+    background-color: #f8d7da;
+    border-color: #dc3545;
+    color: #721c24;
+}
+
+/* Quiz Result Styles */
+.result-summary {
+    text-align: center;
+    margin-bottom: 30px;
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 15px;
+}
+
+.result-score {
+    font-size: 48px;
+    font-weight: bold;
+    color: #007bff;
+    margin-bottom: 5px;
+}
+
+.result-text {
+    font-size: 18px;
+    color: #555;
+}
+
+.incorrect-list-title {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.incorrect-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 30px;
+}
+
+.incorrect-item {
+    background-color: #fff;
+    border: 1px solid #ffc107;
+    border-left: 5px solid #ffc107;
+    padding: 15px;
+    border-radius: 8px;
+}
+
+.incorrect-word {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.incorrect-meaning {
+    font-size: 15px;
+    color: #666;
+}
+
+/* Alarm List Styles */
+.alarm-item {
+    background-color: #fff;
+    border: 1px solid #eee;
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 15px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.02);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-decoration: none;
+    color: inherit;
+    transition: background-color 0.2s;
+}
+
+.alarm-item:active {
+    background-color: #f9f9f9;
+}
+
+.alarm-item.highlight {
+    border-left: 5px solid #007bff;
+}
+
+.alarm-info {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.alarm-time {
+    font-size: 32px;
+    font-weight: bold;
+    color: #333;
+}
+
+.alarm-time span {
+    font-size: 18px;
+    font-weight: normal;
+}
+
+.alarm-details {
+    font-size: 14px;
+    color: #666;
+    display: flex;
+    gap: 10px;
+}
+
+.alarm-name {
+    font-weight: 600;
+}
+
+/* Toggle Switch */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 28px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+    border-radius: 34px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 20px;
+    width: 20px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color: #007bff;
+}
+
+input:checked + .slider:before {
+    transform: translateX(22px);
+}
+
+/* Settings & Form Styles */
+.setting-group {
+    background-color: #fff;
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.02);
+}
+
+.setting-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.setting-item:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.setting-item:first-child {
+    padding-top: 0;
+}
+
+.setting-label {
+    font-size: 16px;
+    color: #333;
+    font-weight: 500;
+}
+
+.setting-control {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.setting-input {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 8px 12px;
+    font-size: 16px;
+    width: 150px;
+    text-align: right;
+}
+
+.setting-select {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 8px 12px;
+    font-size: 16px;
+    background-color: #fff;
+}
+
+.time-picker {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.time-input {
+    font-size: 48px;
+    font-weight: bold;
+    border: none;
+    background: transparent;
+    width: 80px;
+    text-align: center;
+    color: #333;
+}
+
+.time-input:focus {
+    outline: none;
+    border-bottom: 2px solid #007bff;
+}
+
+.day-selector {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+}
+
+.day-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1px solid #ddd;
+    background-color: #fff;
+    font-size: 14px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #666;
+}
+
+.day-btn.active {
+    background-color: #007bff;
+    color: white;
+    border-color: #007bff;
+}
+
+/* Alarm Ring Styles */
+.alarm-ring-container {
+    background-color: #dc3545; /* Red background for alarm */
+    color: white;
+}
+
+.alarm-ring-header {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+
+.alarm-ring-time {
+    font-size: 64px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.alarm-ring-title {
+    font-size: 20px;
+    opacity: 0.9;
+}
+
+.alarm-quiz-card {
+    background-color: white;
+    border-radius: 20px;
+    padding: 30px;
+    color: #333;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+.alarm-quiz-progress {
+    text-align: center;
+    color: #dc3545;
+    font-weight: bold;
+    margin-bottom: 20px;
+    font-size: 18px;
+}
+
+.alarm-quiz-word {
+    font-size: 40px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.alarm-quiz-options {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.alarm-quiz-option {
+    background-color: #f8f9fa;
+    border: 2px solid #e9ecef;
+    border-radius: 12px;
+    padding: 15px;
+    font-size: 16px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.alarm-quiz-option:active {
+    transform: scale(0.98);
+}
